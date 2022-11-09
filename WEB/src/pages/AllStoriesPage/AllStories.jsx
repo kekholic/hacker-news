@@ -21,9 +21,8 @@ const AllStories = () => {
   }, [dispatch]);
   
   useUpdatePage(getAllStories);
+
   
-
-
   const handleUpdateStories = () => {
     dispatch(getAllStories());
   }
@@ -33,7 +32,7 @@ const AllStories = () => {
       {/* <Loader show={isLoading}>Loading...</Loader> */}
       <div className={style['container']}>
       <button onClick={handleUpdateStories}>Update</button>
-        {stories && stories.map(({ data: story }) => (
+        {stories && stories.map((story) => (
           <StoryItem key={story.id} story={story} />
         ))}
       </div>
