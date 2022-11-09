@@ -1,0 +1,18 @@
+.wrapper {
+  margin-left: 2rem;
+}
+
+.info {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.hasKids {
+  cursor: pointer;
+}
+
+.more{
+  color:blue;
+  margin-top: 0.4rem;
+  cursor: pointer;
+}
