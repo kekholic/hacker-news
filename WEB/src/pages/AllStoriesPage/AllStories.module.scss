@@ -1,0 +1,31 @@
+.container {
+  margin-left: 20%;
+  margin-right: 28%;
+}
+.refresh {
+  width: 100%;
+  position: relative;
+  
+  img {
+    position:absolute;
+    right: 0;
+    top: -60px;
+    
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .refreshActive {
+    animation: 2s linear infinite rotate;
+    transform-origin: center;
+  }
+  @keyframes rotate {
+    from {
+      transform: rotate(360deg);
+    }
+  
+    to {
+      transform: rotate(0deg);
+    }
+  }
+}

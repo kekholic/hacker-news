@@ -1,0 +1,71 @@
+@import "../../variables.scss";
+
+.storyWrapper {
+
+  display: flex;
+
+  .score {
+    min-width: 2rem;
+    text-align: center;
+    padding: 0.1rem 1rem;
+
+    color: #7d7d7d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    .rating {
+      max-width: 12px;
+      cursor: pointer;
+      padding: 6px;
+
+      &:first-of-type {
+        transform: rotate(60deg);      
+      }
+    }
+  }
+  
+  .story {
+    @extend %container;
+    padding: 0.8rem;
+    min-width: 100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    .storyInfo {
+      font-size: 1rem;
+      display: flex;
+      flex-direction: column;
+
+      .storyInfoBox {
+        .ava {
+          max-width: 13px;
+        } 
+
+        span {
+          padding-top: 0px; 
+          @extend %text;       
+        }       
+      }
+
+      .date {
+        @extend %text;
+      }
+     
+      
+    }
+    .storyTitle {
+      @extend %subtitle;
+    }    
+  }
+}
+
+.storyWrapper + .storyWrapper {
+  margin-top: 0.2rem;
+}

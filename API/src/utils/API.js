@@ -15,10 +15,8 @@ export const getItem = async (id) => {
 export const getStories = async () => {
   try {
     const { data: storyIds } = await axios.get(
-      `${API_URL}/topstories.json`
+      `${API_URL}/newstories.json`
     );
-    // console.log(storyIds)
-    // const stories = await Promise.all(storyIds.slice(0, 100).map(getItem));
     return storyIds;
   } catch (error) {
     console.log('Ошибка загрузки историй');

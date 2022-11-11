@@ -1,19 +1,19 @@
 import React, {useEffect} from 'react';
 import StoryItem from '../../components/StoryItem/StoryItem';
-// import useStoryFetcher from '../hooks/storyFetcher';
-// import Loader from './Loader';
+import refresh from '../../images/refresh.svg'
+
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllStories } from '../../store/action';
 import { useUpdatePage } from '../../hooks/updatePage';
 
-import style from './AllStories.module.css'
+import style from './AllStories.module.scss'
 
 
 const AllStories = () => {
-  // const { isLoading, stories } = useStoryFetcher();
 
   const dispatch = useDispatch();
   const stories = useSelector((store) => store.stories);
+  const isLoading = useSelector((store) => store.isLoading)
   
 
   useEffect(() => {
@@ -31,7 +31,11 @@ const AllStories = () => {
     <>
       {/* <Loader show={isLoading}>Loading...</Loader> */}
       <div className={style['container']}>
-      <button onClick={handleUpdateStories}>Update</button>
+      {/* <button onClick={handleUpdateStories}>Update</button> */}
+      <div className={style['refresh']} >
+        <img src={refresh} alt="refreshStories" className={isLoading ? style['refreshActive'] : null } onClick={handleUpdateStories}/>
+
+      </div>
         {stories && stories.map((story) => (
           <StoryItem key={story.id} story={story} />
         ))}

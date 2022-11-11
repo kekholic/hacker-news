@@ -1,0 +1,37 @@
+@import '../../variables.scss';
+
+.wrapper {
+  margin-left: 2rem;
+
+  .info {
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+
+    span:first-of-type{
+      font-weight: 500;
+    }
+    span:last-of-type{
+      margin-left: auto;
+    }
+    img {
+      margin: 0 0.3rem;
+    }
+  }
+
+
+  .text {
+    @extend %text;
+  }
+  
+  .hasKids {
+    cursor: pointer;
+  }
+  
+  .more{
+    color:blue;
+    margin-top: 0.4rem;
+    cursor: pointer;
+  }
+}
+

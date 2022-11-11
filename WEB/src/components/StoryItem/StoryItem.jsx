@@ -1,6 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import style from './StoryItem.module.css'
+import style from './StoryItem.module.scss'
+import user from '../../images/user.svg'
 
 const StoryItem = ({ story: { id, by, title, time, score } }) => {
   const history = useHistory();
@@ -17,19 +18,24 @@ const StoryItem = ({ story: { id, by, title, time, score } }) => {
          <img className={style['rating']} src="/icons8-triangle-arrow-16.png" alt="rateDown" />
       </div>
       <div className={style["story"]} onClick={() => handleOpenStory(id)}>
-      <div className={style["story-info"]}>       
+      <div className={style["storyInfo"]}>
+        <div className={style['storyInfoBox']}>       
+        <img src={user} alt="user" />
+        
           <span >
-          <img className={style['ava']} src="/ava.png" alt="ava" />
             {` ${by}`}
           </span>
+
+          </div>
           <span className={style['date']} >
             {new Date(time * 1000).toLocaleDateString('ru-RU', {
               hour: 'numeric',
               minute: 'numeric'
             })}
           </span>
+
         </div>      
-        <div>
+        <div className={style['storyTitle']}>
          {title}
         </div>
         
