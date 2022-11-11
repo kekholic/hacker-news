@@ -1,11 +1,14 @@
 # Hacker news clone
 Интерфейс для сайта Hacker News, состоящий из двух страниц.
 
-# Installation API
+Frontend will be available on http://127.0.0.1:3000/  
+Backend will be available on http://127.0.0.1:4000/
+
+## Start API
 1. `cd API`
 2. `yarn start`
 
-# Installation WEB
+## Start WEB
 1. `cd WEB`
 2. `yarn start`
 
